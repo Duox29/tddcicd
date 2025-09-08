@@ -2,21 +2,26 @@ package org.samsung;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FizzBuzzTest {
     @Test
     public void testFizzBuzzTrue() {
         int number = 5;
+        List<String> list = Arrays.asList("1","2","Fizz","4","Buzz");
         String str = " 1 2 Fizz 4 Buzz";
-        assertEquals(str, FizzBuzz.FizzBuzz(number));
+        assertEquals(list, FizzBuzz.FizzBuzz2(number));
     }
 
     @Test
     public void testFizzBuzzFalse() {
         int number = 5;
-        String str = "1 2 Fizz 4 Buzz";
-        assertNotEquals(str, FizzBuzz.FizzBuzz(number));
+        List<String> list = Arrays.asList("1","2","Fizz","4","Buzz");
+        assertNotEquals(list, FizzBuzz.FizzBuzz(number));
     }
     @Test
     public void FbshouldCatchException() {
