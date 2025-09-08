@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '21'
-          distribution: 'adoptopenjdk'
+          distribution: 'temurin'
 
       - name: Maven dependencies
         uses: actions/cache@v3
