@@ -1,0 +1,25 @@
+package org.samsung;
+
+public class FizzBuzz {
+    public static String FizzBuzz(int number) {
+       if(number < 0) {
+           throw new IllegalArgumentException("Number must be a positive integer");
+       } else {
+           StringBuilder str = new StringBuilder();
+           for(int i = 1; i <= number; i++) {
+               if(i % 3 == 0 && i % 5 == 0) {
+                   str.append(" FizzBuzz");
+               } else if(i % 3 == 0) {
+                   str.append(" Fizz");
+               }
+               else if(i % 5 == 0) {
+                   str.append(" Buzz");
+               }
+               else {
+                   str.append(" "+i);
+               }
+           }
+           return str.toString();
+       }
+    }
+}
