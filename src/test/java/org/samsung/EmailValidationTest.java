@@ -37,9 +37,7 @@ public class EmailValidationTest {
     @Tag("G")
     @ParameterizedTest
     @CsvFileSource(resources = "/data.csv")
-    public void emptyMailTest2(String input) {
-        String email = "duox@gmail.com";
-        boolean expected = true;
+    public void emptyMailTest2(String input, boolean expected) {
         assertThat(expected, equalTo(EmailValidate.isEmailValidate(input)));
     }
     @Test
