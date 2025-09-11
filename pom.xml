@@ -110,9 +110,21 @@
           <version>0.8.13</version>
           <configuration>
             <excludes>
-              <exclude>**/*Repository</exclude>
-              <exclude>**/*Driven</exclude>
+              <exclude>**/*Repository*.class</exclude>
+              <exclude>**/*Driven*.class</exclude>
             </excludes>
+            <rules>
+              <rule>
+                <element>CLASS</element>
+                <limits>
+                  <limit>
+                    <counter>LINE</counter>
+                    <value>COVEREDRATIO</value>
+                    <minimum>0.60</minimum>
+                  </limit>
+                </limits>
+              </rule>
+            </rules>
           </configuration>
           <executions>
             <execution>
@@ -127,8 +139,16 @@
                 <goal>report</goal>
               </goals>
             </execution>
+            <execution>
+              <id>check</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
           </executions>
         </plugin>
+
 
       </plugins>
   </build>
